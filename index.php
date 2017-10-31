@@ -55,28 +55,49 @@ echo <<<_FixedHTML
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/isn.css">
+    <link rel="stylesheet" type="text/css" href="css/isn.css">
 
-    <script src="../js/jquery.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+    <link rel="manifest" href="/icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="js/jquery.js"></script>
     
-    <title>International Sporting News</title>
+    <title>Vegas Sports Insider</title>
     
     <script>
  
     </script>
 </head>
 <body> 
+    <div id='iFrameCover'>
+        updating article...
+    </div>
     <div id='container'>
         <div id='headerContainer'>
             <div id='articleHeader'>
                 <table id='headerTable'>
                     <tr>
                         <td class='headerSide'>
-                            <img src='../media/menuIcon.png' class='headerIcon'>SECTIONS
-                            <img src='../media/findIcon.png' class='headerIcon'>SEARCH
+                            <img src='media/menuIcon.png' class='headerIcon'>SECTIONS
+                            <img src='media/findIcon.png' class='headerIcon'>SEARCH
                         </td>
                         <td class='headerTitle'>
-                            <img src='../media/title1.png' class='titleImage'
+                            <img src='media/title1.png' class='titleImage'
                         </td>
                         <td class='headerSide'>
                             <div class='logIn'>
@@ -105,7 +126,7 @@ echo <<<_FixedHTML
                         </td>
                         <td class='subMenueCell2'>
                             $date
-                            <img src='../media/isn/sunny.png' class='weatherIcon'>
+                            <img src='media/isn/sunny.png' class='weatherIcon'>
                             68&#8457
                         </td>
                     </tr>
@@ -115,16 +136,16 @@ echo <<<_FixedHTML
         <div id='articleContent'>
             <div class='spacer'></div>
             <div id='myBanner'>
-                <img src='../media/isn/sampleBanner.png'>
+                <img src='media/isn/sampleBanner.png'>
             </div>
             <div id='contentUpdate'>
-                Updating Article
+                loading...
             </div>
             <div id='rightPanel'>
                 <div id='videoPlayer'>
                     <span class='sectionTitle'>TOP VIDEOS</span>
                     <br><br>
-                    <img src='../media/isn/videoPlayer.png' class='videoIcon'>
+                    <img src='media/isn/videoPlayer.png' class='videoIcon'>
                 </div>
                 <br>    
                 <hr>
@@ -143,7 +164,7 @@ echo <<<_FixedHTML
                 <br>
                 <hr>
                 <div>
-                    <img src='../media/isn/skyscraper.png'>
+                    <img src='media/isn/skyscraper.png'>
                 </div>
                 <hr>
             </div>
@@ -154,17 +175,13 @@ echo <<<_FixedHTML
 
     <script>
 
-        updateArticle()
+        updateArticle();
 
         function updateArticle(){
 
+            $('#iFrameCover').show();
+
             updateFrameWork();
-            updatePlayer();
-            updateInjury();
-            updateDuration();
-            updateByLine();
-            updateTagline();
-            updateQuote();
         }
 
         function updateFrameWork(){
@@ -173,13 +190,14 @@ echo <<<_FixedHTML
             
             $.ajax({
                 type: 'POST',
-                url: '../php/fp/update_framework.php',   
+                url: 'fp/update_framework.php',   
                 dataType: 'html',
                 data: {
                     frame_no : frameNo
                 },
                 success: function (html) {
                     $("#contentUpdate").html(html);
+                    updatePlayer();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     $("#contentUpdate").hide().fadeIn("slow").html("error loading content.");
@@ -194,7 +212,7 @@ echo <<<_FixedHTML
     
             $.ajax({
                 type: 'POST',
-                url: '../php/fp/update_player.php',   
+                url: 'fp/update_player.php',   
                 dataType: 'html',
                 data: {
                     player_id : selPlayer
@@ -217,8 +235,12 @@ echo <<<_FixedHTML
                     $(".ply3").html(playerTeam);
                     $(".ply5").html(playerLoc);
                     $(".ply6").html(locUpper);
-    
-                    updateLink();
+
+                    updateInjury();
+                    updateDuration();
+                    updateByLine();
+                    updateTagline();
+                    updateQuote();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     $(".ply1").hide().fadeIn("slow").html("error loading name.");
@@ -232,7 +254,7 @@ echo <<<_FixedHTML
 
             $.ajax({
                 type: 'POST',
-                url: '../php/fp/update_injury.php',   
+                url: 'fp/update_injury.php',   
                 dataType: 'html',
                 data: {
                     injury_id : injury
@@ -253,10 +275,9 @@ echo <<<_FixedHTML
                     $(".inj4").html(inj4);
 
                     if (inj5 != "None"){
-                        $("#injuryImg").attr("src", "../media/" + inj5);
+                        $("#injuryImg").attr("src", "media/" + inj5);
                     }
-                    updateLink();
-                    
+            
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     $(".inj1").hide().fadeIn("slow").html("error loading injury.");
@@ -270,7 +291,7 @@ echo <<<_FixedHTML
 
             $.ajax({
                 type: 'POST',
-                url: '../php/fp/update_duration.php',   
+                url: 'fp/update_duration.php',   
                 dataType: 'html',
                 data: {
                     duration_id : duration
@@ -289,7 +310,6 @@ echo <<<_FixedHTML
                     $(".dur3").html(dur3);
                     $(".dur4").html(dur4);
 
-                    updateLink();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     $(".dur1").hide().fadeIn("slow").html("error loading severity.");
@@ -303,7 +323,7 @@ echo <<<_FixedHTML
 
             $.ajax({
                 type: 'POST',
-                url: '../php/fp/update_byLine.php',   
+                url: 'fp/update_byLine.php',   
                 dataType: 'html',
                 data: {
                     byLine_id : byLine
@@ -318,9 +338,7 @@ echo <<<_FixedHTML
 
                     $(".byl1").html(byl1);
                     $(".byl3").html(byl3);
-                    $("#byPhotoImg").attr("src", "../media/" + byl2);
-                    
-                    updateLink();
+                    $("#byPhotoImg").attr("src", "media/" + byl2);
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     $(".byl1").hide().fadeIn("slow").html("error loading cause.");
@@ -334,7 +352,7 @@ echo <<<_FixedHTML
     
             $.ajax({
                 type: 'POST',
-                url: '../php/fp/update_tagLine.php',   
+                url: 'fp/update_tagLine.php',   
                 dataType: 'html',
                 data: {
                     tag_Line : tagLine
@@ -346,8 +364,6 @@ echo <<<_FixedHTML
                     var tagLineFetch = result[0];
     
                     $(".catch").html(tagLineFetch);
-    
-                    updateLink();
                     
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
@@ -362,7 +378,7 @@ echo <<<_FixedHTML
             
             $.ajax({
                 type: 'POST',
-                url: '../php/fp/update_quote.php',   
+                url: 'fp/update_quote.php',   
                 dataType: 'html',
                 data: {
                     quote_id : quoteID
@@ -374,8 +390,8 @@ echo <<<_FixedHTML
                     var quoteFetch = result[0];
     
                     $(".qte1").html(quoteFetch);
-    
-                    updateLink();
+
+                    $('#iFrameCover').fadeOut(1000);
                     
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
