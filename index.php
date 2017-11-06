@@ -391,7 +391,7 @@ echo <<<_FixedHTML
     
                     $(".qte1").html(quoteFetch);
 
-                    $('#iFrameCover').fadeOut(1000);
+                    $('#iFrameCover').fadeOut(500);
                     
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 

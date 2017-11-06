@@ -51,7 +51,7 @@ switch ($frameNum) {
     case '2':
     
         echo "<br><br>
-            <div class='catch breaking'>BREAKING NEWS</div>
+            <div class='catch breaking'>[Select Tag]</div>
             <br>
             <div class='headline'>
                 <span class='ply1'>[Select Player]</span>&nbsp
