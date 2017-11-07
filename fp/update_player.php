@@ -6,14 +6,6 @@ require_once 'dbConnect.php';
 // Check connection
 if (!$conn) {  die("Connection failed: " . mysqli_connect_error()); }
 
-if (isset($_POST['frame_no'])){
-    
-        $frameNum = $_POST['frame_no'];
-    
-} else {
-
-    $frameNum = "1";
-}
 
 if (isset($_POST['player_id'])){
     
@@ -21,12 +13,12 @@ if (isset($_POST['player_id'])){
     
 } else {
 
-    $player = "1";
+    $player = "XX";
 }
 
 $sql = "SELECT ply_link, ply_name, ply_team, ply_pos, ply_sex, ply_loc
-        FROM ply
-        WHERE ply_id = '$player'";
+FROM ply
+WHERE ply_id = '$player'";
 
 $result = mysqli_query($conn,$sql);
 

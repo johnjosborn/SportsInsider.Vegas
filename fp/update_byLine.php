@@ -6,22 +6,13 @@ require_once 'dbConnect.php';
 // Check connection
 if (!$conn) {  die("Connection failed: " . mysqli_connect_error()); }
 
-if (isset($_POST['frame_no'])){
-    
-        $frameNum = $_POST['frame_no'];
-    
-} else {
-
-    $frameNum = "1";
-}
-
 if (isset($_POST['byLine_id'])){
     
     $byLine = $_POST['byLine_id'];
     
 } else {
 
-    $byLine = "1";
+    $byLine = "XX";
 }
 
 $sql = "SELECT byl_author, byl_photo, byl_pos

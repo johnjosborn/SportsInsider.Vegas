@@ -12,7 +12,7 @@ if (isset($_POST['quote_id'])){
     
 } else {
 
-    $quote = "1";
+    $quote = "XX";
 }
 
 $sql = "SELECT qte_text

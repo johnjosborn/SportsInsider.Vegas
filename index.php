@@ -12,37 +12,25 @@ if (!$conn) {  die("Connection failed: " . mysqli_connect_error()); }
 
 $date = date("l M j Y");
 
-$c0 = $c1 = $c2 = $c3 = $c4 = $c5 = $c6 = $c7 = 0;
+$c0 = "";
+$c1 = "";
+$c2 = "";
+$c3 = "";
+$c4 = "";
+$c5 = "";
+$c6 = "";
+$codedString = "";
 
 //pull all get variables
-if (isset($_GET['c0'])){
-    $c0 = $_GET['c0'];
+if (isset($_GET['articleID'])){
+    $codedString = $_GET['articleID'];
+    $c1 = substr($codedString,0,2);
+    $c2 = substr($codedString,2,2);
+    $c3 = substr($codedString,4,2);
+    $c4 = substr($codedString,6,2);
+    $c5 = substr($codedString,8,2);
+    $c6 = substr($codedString,10,2);
 }
-if (isset($_GET['c1'])){
-    $c1 = $_GET['c1'];
-}
-if (isset($_GET['c2'])){
-    $c2 = $_GET['c2'];
-}
-if (isset($_GET['c3'])){
-    $c3 = $_GET['c3'];
-}
-if (isset($_GET['c4'])){
-    $c4 = $_GET['c4'];
-}
-if (isset($_GET['c5'])){
-    $c5 = $_GET['c5'];
-}
-if (isset($_GET['c6'])){
-    $c6 = $_GET['c6'];
-}
-if (isset($_GET['c7'])){
-    $c7 = $_GET['c7'];
-}
-if (isset($_GET['c8'])){
-    $c8 = $_GET['c8'];
-}
-
 
 echo <<<_FixedHTML
 
@@ -85,7 +73,7 @@ echo <<<_FixedHTML
 </head>
 <body> 
     <div id='iFrameCover'>
-        updating article...
+        fetching article...
     </div>
     <div id='container'>
         <div id='headerContainer'>
@@ -186,7 +174,7 @@ echo <<<_FixedHTML
 
         function updateFrameWork(){
             
-            frameNo =  $c0;
+            frameNo =  "1";
             
             $.ajax({
                 type: 'POST',
@@ -203,12 +191,13 @@ echo <<<_FixedHTML
                     $("#contentUpdate").hide().fadeIn("slow").html("error loading content.");
                 }
             });
+            
     
         }
                 
         function updatePlayer(){
     
-            var selPlayer = $c1;
+            var selPlayer = '$c1';
     
             $.ajax({
                 type: 'POST',
@@ -250,7 +239,7 @@ echo <<<_FixedHTML
                 
         function updateInjury(){
             
-            var injury = $c2;
+            var injury = '$c2';
 
             $.ajax({
                 type: 'POST',
@@ -287,7 +276,7 @@ echo <<<_FixedHTML
                 
         function updateDuration(){
             
-            var duration = $c3;
+            var duration = '$c3';
 
             $.ajax({
                 type: 'POST',
@@ -319,7 +308,7 @@ echo <<<_FixedHTML
                 
         function updateByLine(){
             
-            var byLine = $c5;
+            var byLine = '$c4';
 
             $.ajax({
                 type: 'POST',
@@ -348,7 +337,7 @@ echo <<<_FixedHTML
                 
         function updateTagline(){
             
-            var tagLine = $c7;
+            var tagLine = '$c5';
     
             $.ajax({
                 type: 'POST',
@@ -374,7 +363,7 @@ echo <<<_FixedHTML
 
         function updateQuote(){
             
-            var quoteID = $c8;
+            var quoteID = '$c6';
             
             $.ajax({
                 type: 'POST',
