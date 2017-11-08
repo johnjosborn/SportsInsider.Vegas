@@ -186,15 +186,6 @@ body{
 
 /* BY LINE */
 
-#byLineContX{
-    width: 20%;
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    text-align: center;
-    font-size: 1em;
-}
-
 #byLineCont{
     text-align: left;
     font-size: 1em;
@@ -271,4 +262,44 @@ body{
 
 .inline{
     display: inline-block;
+}
+
+/* TWEET */
+
+#tweet{
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 10px;
+    padding: 1em;
+    text-align: left;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    width: 60%;
+    font-family: 'Manuale', serif;
+}
+
+.twtTitle{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.twtSub{
+    color: gray;
+}
+
+.twtIcon{
+    vertical-align: bottom;
+    height: 25px;
+}
+
+.twtStats{
+    margin: 10px 0;
+    height: 30px;
+}
+
+#twtBird{
+    position: absolute;
+    top: 1.1em;
+    right: 2%;
 }
