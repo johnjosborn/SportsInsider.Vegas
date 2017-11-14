@@ -43,7 +43,7 @@ echo <<<_FixedHTML
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/isn.css">
+    <link rel="stylesheet" type="text/css" href="css/isnmobile.css">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-icon-60x60.png">
@@ -76,85 +76,28 @@ echo <<<_FixedHTML
         fetching article...
     </div>
     <div id='container'>
-        <div id='headerContainer'>
-            <div id='articleHeader'>
-                <table id='headerTable'>
-                    <tr>
-                        <td class='headerSide'>
-                            <img src='media/menuIcon.png' class='headerIcon'>SECTIONS
-                            <img src='media/findIcon.png' class='headerIcon'>SEARCH
-                        </td>
-                        <td class='headerTitle'>
-                            <img src='media/title1.png' class='titleImage'
-                        </td>
-                        <td class='headerSide'>
-                            <div class='logIn'>
-                                LOG IN
-                            </div>
-                            <div class='subscribe'>
-                                SUBSCRIBE
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id='subMenu1'>
-                <table id='subMenuTable'>
-                    <tr>
-                        <td class='subMenueCell2'>
-                            EDITION: US | West Coast
-                        </td>
-                        <td class='subMenueCell1'>
-                            <div class='menuSportButton'>NFL</div>
-                            <div class='menuSportButton'>NBA</div>
-                            <div class='menuSportButton'>MLB</div>
-                            <div class='menuSportButton'>NHL</div>
-                            <div class='menuSportButton'>PGA</div>
-                            <div class='menuSportButton'>More...</div>
-                        </td>
-                        <td class='subMenueCell2'>
-                            $date
-                            <img src='media/isn/sunny.png' class='weatherIcon'>
-                            68&#8457
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <div class='mainDiv' id='articleHeader'>
+            <img src='media/title1.png' class='titleImage'>
+        </div>
+        <div id='subMenu1'>
+            <table id='subMenuTable'>
+                <tr>
+                    <td class='subMenueCell2'>
+                        EDITION: US | West Coast
+                    </td>
+                    <td class='subMenueCell2'>
+                        $date
+                        <br>
+                        <img src='media/isn/sunny.png' class='weatherIcon'>
+                        68&#8457
+                    </td>
+                </tr>
+            </table>
         </div>
         <div id='articleContent'>
-            <div class='spacer'></div>
-            <div id='myBanner'>
-                <img src='media/isn/sampleBanner.png'>
-            </div>
+            <img src='media/isn/sampleBanner.png' class='bannerAd1'>
             <div id='contentUpdate'>
                 loading...
-            </div>
-            <div id='rightPanel'>
-                <div id='videoPlayer'>
-                    <span class='sectionTitle'>TOP VIDEOS</span>
-                    <br><br>
-                    <img src='media/isn/videoPlayer.png' class='videoIcon'>
-                </div>
-                <br>    
-                <hr>
-                <div>
-                    <span class='sectionTitle'>TOP STORIES</span>
-                    <br><br>
-                    <div class='linkHead'>City Council Vote</div>
-                    <div class='linkBody'>City Council votes 5-4 to approve initial funding for the long awaited expansion of [more...]</div>
-                    <br>
-                    <div class='linkHead'>Criminal Charges For Osborn</div>
-                    <div class='linkBody'>In yet another bizzare twist in the ongoing saga of J. Osborn, District Attorney Ian T. Quick [more...]</div>
-                    <br>
-                    <div class='linkHead'>Top Prep Performers of the Week</div>
-                    <div class='linkBody'>Once again Lincoln High's star athelete Christopher McKenna had the crowd on their feet with [more...]</div>
-                </div>
-                <br>
-                <hr>
-                <div>
-                    <img src='media/isn/skyscraper.png'>
-                </div>
-                <hr>
             </div>
             <div style='clear: both;'></div>
         </div>
@@ -162,10 +105,6 @@ echo <<<_FixedHTML
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-581e611571151174"></script>
 
     <script>
-
-        if (screen.width <= 899) {
-            document.location = "http://www.sportsinsider.vegas/mobile.php?articleID=" + $codedString;
-        }
 
         updateArticle();
 
@@ -178,7 +117,7 @@ echo <<<_FixedHTML
 
         function updateFrameWork(){
             
-            frameNo =  "3";
+            frameNo =  "4";
             
             $.ajax({
                 type: 'POST',

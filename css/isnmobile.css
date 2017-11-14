@@ -1,0 +1,227 @@
+@charset "ISO-8859-1";
+
+html, body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body{
+    background: linear-gradient( #c5c5c5, #a7a7a7);
+}
+
+#container{
+    overflow: auto;
+}
+
+.mainDiv{
+    width: 100%;
+    box-shadow: 0 5px 10px #333;
+}
+
+#articleHeader{
+    border-bottom: 1px solid #fff;
+    background: linear-gradient( #050505, #3d3d3d);
+    color: #fff;
+    padding: .5em;
+    text-align: left;
+    overflow-x: hidden;
+}
+
+#iFrameCover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 3;
+    text-align: center;
+    font-family: 'Playfair Display SC', serif;
+    color: white;
+    padding-top: 35%;
+    font-size: 3em;
+}
+
+.titleImage{
+    vertical-align: middle;
+    width: 95%;
+}
+
+.headerText{
+    float: right;
+}
+
+
+#subMenu1{
+    width: 100%;
+    background: linear-gradient( rgb(20, 31, 68), rgb(45, 48, 82));
+    color: #fff;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1em;
+    padding: .25em;
+    border-bottom: 1px solid #ddd;
+}
+
+#subMenuTable{
+    width: 100%;
+}
+
+.subMenueCell1{
+    width: 60%;
+}
+
+.subMenueCell2{
+    width: 20%;
+    position: relative;
+}
+
+/* ADVERTISING */
+
+#myBanner{
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.bannerAd1{
+    width: 100%;
+}
+
+/* EDITED LIMIT */
+
+
+
+.weatherIcon{
+    padding: 0;
+    margin: 0 .5em -.2em .5em;
+}
+
+/* THE ARTICLE */
+
+#articleContent{
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    padding: .2em .5em;
+}
+
+#contentUpdate{
+    width: 95%;
+    float: left;
+}
+
+#articleText{
+    width: 100%;
+    font-family: 'Manuale', serif;
+}
+
+.catch{
+    font-weight: bold;
+    font-family: 'Manuale', serif;
+    font-size: 1.75em;
+}
+.headline{
+    font-weight: bold;
+    font-family: 'Manuale', serif;
+    font-size: 1.5em;
+}
+.posting{
+    color: #666;
+    font-style: italic;
+    font-size: .9em;
+}
+
+#injuryImg{
+    height: 8em;
+    margin: 2em;
+}
+
+.cityHead{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+/* BY LINE */
+
+#byLineCont{
+    text-align: left;
+    font-size: 1em;
+    color: #666;
+    font-style: italic;
+}
+
+#byPhotoImg{
+    width: 40px;
+    vertical-align: bottom;
+}
+
+
+
+
+
+#myBarAds{
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* GENERAL STYLING */
+
+.centered{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.inline{
+    display: inline-block;
+}
+
+/* TWEET */
+
+#tweet{
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 10px;
+    padding: 1em;
+    text-align: left;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    font-family: 'Manuale', serif;
+    font-size: .7em;
+}
+
+.twtTitle{
+    font-size: .95em;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.twtSub{
+    color: gray;
+}
+
+.twtIcon{
+    vertical-align: bottom;
+    height: 25px;
+}
+
+.twtLogo{
+    vertical-align: bottom;
+    height: 35px;
+}
+
+.twtStats{
+    margin: 10px 0 0 0;
+    height: 20px;
+}
+
+#twtBird{
+    position: absolute;
+    top: 1.1em;
+    right: 2%;
+}
