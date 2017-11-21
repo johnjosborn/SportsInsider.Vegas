@@ -12,7 +12,6 @@ if (!$conn) {  die("Connection failed: " . mysqli_connect_error()); }
 
 $date = date("l M j Y");
 
-$c0 = "";
 $c1 = "";
 $c2 = "";
 $c3 = "";
@@ -23,13 +22,19 @@ $codedString = "";
 
 //pull all get variables
 if (isset($_GET['articleID'])){
+
     $codedString = $_GET['articleID'];
-    $c1 = substr($codedString,1,2);
-    $c2 = substr($codedString,3,2);
-    $c3 = substr($codedString,5,2);
-    $c4 = substr($codedString,7,2);
-    $c5 = substr($codedString,9,2);
-    $c6 = substr($codedString,11,2);
+
+    $arr = str_split($codedString, 2);
+
+    $c2 = $arr[0];
+    $c3 = $arr[1];
+    $c4 = $arr[2];
+    $c5 = $arr[3];
+    $c6 = $arr[4];
+    $c1 = $arr[5];
+
+    $mobilePage = "http://www.sportsinsider.vegas/mobile.php?articleID=" . $_GET['articleID'];
 }
 
 echo <<<_FixedHTML
@@ -63,12 +68,12 @@ echo <<<_FixedHTML
     <meta name="msapplication-TileImage" content="/icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <script src="js/jquery.js"></script>
+    <script src="/js/jquery.js"></script>
     
     <title>Vegas Sports Insider</title>
     
     <script>
- 
+
     </script>
 </head>
 <body> 
@@ -164,7 +169,10 @@ echo <<<_FixedHTML
     <script>
 
         if (screen.width <= 899) {
-            document.location = "http://www.sportsinsider.vegas/mobile.php?articleID=" + $codedString;
+            var artLink = '$mobilePage';
+            window.location.assign(artLink);
+        } else {
+            
         }
 
         updateArticle();
@@ -189,7 +197,7 @@ echo <<<_FixedHTML
                 },
                 success: function (html) {
                     $("#contentUpdate").html(html);
-                    updatePlayer();
+                    updateInjury();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     $("#contentUpdate").hide().fadeIn("slow").html("error loading content.");
@@ -228,12 +236,6 @@ echo <<<_FixedHTML
                     $(".ply3").html(playerTeam);
                     $(".ply5").html(playerLoc);
                     $(".ply6").html(locUpper);
-
-                    updateInjury();
-                    updateDuration();
-                    updateByLine();
-                    updateTagline();
-                    updateQuote();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     $(".ply1").hide().fadeIn("slow").html("error loading name.");
@@ -270,6 +272,12 @@ echo <<<_FixedHTML
                     if (inj5 != "None"){
                         $("#injuryImg").attr("src", "media/" + inj5);
                     }
+
+                    updatePlayer();
+                    updateDuration();
+                    updateByLine();
+                    updateTagline();
+                    updateQuote();
             
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) { 

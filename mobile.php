@@ -24,12 +24,15 @@ $codedString = "";
 //pull all get variables
 if (isset($_GET['articleID'])){
     $codedString = $_GET['articleID'];
-    $c1 = substr($codedString,1,2);
-    $c2 = substr($codedString,3,2);
-    $c3 = substr($codedString,5,2);
-    $c4 = substr($codedString,7,2);
-    $c5 = substr($codedString,9,2);
-    $c6 = substr($codedString,11,2);
+    
+    $arr = str_split($codedString, 2);
+    
+    $c2 = $arr[0];
+    $c3 = $arr[1];
+    $c4 = $arr[2];
+    $c5 = $arr[3];
+    $c6 = $arr[4];
+    $c1 = $arr[5];
 }
 
 echo <<<_FixedHTML
@@ -77,7 +80,7 @@ echo <<<_FixedHTML
     </div>
     <div id='container'>
         <div class='mainDiv' id='articleHeader'>
-            <img src='media/title1.png' class='titleImage'>
+            <img src='media/title2.png' class='titleImage'>
         </div>
         <div id='subMenu1'>
             <table id='subMenuTable'>
