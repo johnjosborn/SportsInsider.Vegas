@@ -98,7 +98,17 @@ echo <<<_FixedHTML
             </table>
         </div>
         <div id='articleContent'>
-            <img src='media/isn/sampleBanner.png' class='bannerAd1'>
+            <div id='banner1'>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- FFOMobile -->
+                <ins class="adsbygoogle"
+                    style="display:inline-block;width:320px;height:100px"
+                    data-ad-client="ca-pub-1750870984442390"
+                    data-ad-slot="4189752646"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
             <div id='contentUpdate'>
                 loading...
             </div>

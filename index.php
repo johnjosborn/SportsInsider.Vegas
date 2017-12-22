@@ -75,6 +75,15 @@ echo <<<_FixedHTML
     <script>
 
     </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7111364848806706",
+        enable_page_level_ads: true
+      });
+    </script>
+
 </head>
 <body> 
     <div id='iFrameCover'>
@@ -83,25 +92,22 @@ echo <<<_FixedHTML
     <div id='container'>
         <div id='headerContainer'>
             <div id='articleHeader'>
-                <table id='headerTable'>
-                    <tr>
-                        <td class='headerSide'>
-                            <img src='media/menuIcon.png' class='headerIcon'>SECTIONS
-                            <img src='media/findIcon.png' class='headerIcon'>SEARCH
-                        </td>
-                        <td class='headerTitle'>
-                            <img src='media/title1.png' class='titleImage'
-                        </td>
-                        <td class='headerSide'>
-                            <div class='logIn'>
-                                LOG IN
-                            </div>
-                            <div class='subscribe'>
-                                SUBSCRIBE
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                <div class='headerLeft'>
+                    <img src='media/menuIcon.png' class='headerIcon'>SECTIONS
+                    <img src='media/findIcon.png' class='headerIcon'>SEARCH
+                </div>
+                <div class='headerCenter'>
+                    <img src='media/title1.png' class='titleImage'>
+                </div>
+                <div class='headerRight'>
+                    <div class='logIn'>
+                        LOG IN
+                    </div>
+                    <div class='subscribe'>
+                        SUBSCRIBE
+                    </div>
+                </div>
+                <div style="clear:both"></div>
             </div>
             <div id='subMenu1'>
                 <table id='subMenuTable'>
@@ -129,7 +135,15 @@ echo <<<_FixedHTML
         <div id='articleContent'>
             <div class='spacer'></div>
             <div id='myBanner'>
-                <img src='media/isn/sampleBanner.png'>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- FFOBanner1 -->
+                <ins class="adsbygoogle"
+                    style="display:inline-block;width:728px;height:90px"
+                    data-ad-client="ca-pub-1750870984442390"
+                    data-ad-slot="5398892536"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
             <div id='contentUpdate'>
                 loading...
@@ -157,7 +171,15 @@ echo <<<_FixedHTML
                 <br>
                 <hr>
                 <div>
-                    <img src='media/isn/skyscraper.png'>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- FFOBanner2 -->
+                    <ins class="adsbygoogle"
+                        style="display:inline-block;width:300px;height:600px"
+                        data-ad-client="ca-pub-1750870984442390"
+                        data-ad-slot="8268598458"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                 </div>
                 <hr>
             </div>
